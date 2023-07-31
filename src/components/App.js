@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../App.css"
 
 const getUpdatedTime = (update) => {
-    const timer = new Date(2023, 7, 31, 0, 0, update, 0);
+    const timer = new Date(2023, 7, 31, 0, 0, update);
     // Extract individual components (hours, minutes, seconds) from the date object
     const hours = timer.getHours();
     const minutes = timer.getMinutes();
@@ -48,10 +48,11 @@ const App = () => {
 
     return (
         <div className="App">
-            <h1>{getUpdatedTime(update)}</h1>
-            <button name="start" onClick={handleClick}>Start</button>
-            <button name="stop" onClick={handleClick}>Stop</button>
-            <button name="reset" onClick={handleClick}>Reset</button>
+            <h1 className="title">Stop Watch</h1>
+            <h1 className="watch">{getUpdatedTime(update)}</h1>
+            <button className="btn btn-outline-light m-4 btn-lg" name="start" onClick={handleClick}>Start</button>
+            <button className="btn btn-light m-4 btn-lg" name="stop" onClick={handleClick}>Stop</button>
+            <button className="btn btn-outline-light m-4 btn-lg" name="reset" onClick={handleClick}>Reset</button>
         </div>
     )
 };
